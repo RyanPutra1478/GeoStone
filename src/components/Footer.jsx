@@ -22,6 +22,27 @@ function Footer() {
 
   return (
     <footer className="footer" id="contact" ref={sectionRef}>
+      {/* CTA Banner */}
+      <div className="footer__cta-section">
+        <div className="container">
+          <div className="footer__cta">
+            <div className="footer__cta-bg"></div>
+            <div className="footer__cta-content">
+              <h2>Ready to Start Your Next Mining Project?</h2>
+              <p>
+                Let us bring our expertise and cutting-edge technology to your
+                operation. Contact our team for a consultation.
+              </p>
+              <a href="mailto:info@geostone.co.id" className="footer__cta-btn">
+                Get In Touch
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* Main Footer */}
       <div className="footer__main">

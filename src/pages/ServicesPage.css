@@ -23,7 +23,7 @@
   direction: rtl;
 }
 
-.sp-service--reverse>* {
+.sp-service--reverse > * {
   direction: ltr;
 }
 
