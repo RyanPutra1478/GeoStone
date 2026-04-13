@@ -7,9 +7,12 @@ import ServicesPage from './pages/ServicesPage'
 import TradePage from './pages/TradePage'
 import GalleryPage from './pages/GalleryPage'
 import ContactPage from './pages/ContactPage'
+import { useScrollReveal } from './hooks/useScrollReveal'
 import './App.css'
 
 function App() {
+  useScrollReveal()
+
   return (
     <div className="app">
       <Navbar />

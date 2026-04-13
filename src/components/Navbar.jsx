@@ -21,11 +21,11 @@ function Navbar() {
   }, [location])
 
   const navLinks = [
-    { to: '/', label: 'Home' },
-    { to: '/company', label: 'Our Company' },
-    { to: '/services', label: 'Our Services' },
-    { to: '/trade', label: 'Trade Service', future: true },
-    { to: '/gallery', label: 'Project Gallery' },
+    { to: '/', label: 'Beranda' },
+    { to: '/company', label: 'Perusahaan' },
+    { to: '/services', label: 'Layanan' },
+    { to: '/trade', label: 'Perdagangan' },
+    { to: '/gallery', label: 'Galeri' },
   ]
 
   const isActive = (path) => {
@@ -43,7 +43,7 @@ function Navbar() {
           <img src="/logo_geostone .png" alt="GeoStone Logo" className="navbar__logo" />
           <div className="navbar__brand-text">
             <span className="navbar__brand-name">GeoStone</span>
-            <span className="navbar__brand-tagline">Mining & Geological</span>
+            <span className="navbar__brand-tagline">Pertambangan & Geologi</span>
           </div>
         </Link>
 
@@ -52,16 +52,15 @@ function Navbar() {
             <li key={link.to}>
               <Link
                 to={link.to}
-                className={`navbar__link ${isActive(link.to) ? 'navbar__link--active' : ''} ${link.future ? 'navbar__link--future' : ''}`}
+                className={`navbar__link ${isActive(link.to) ? 'navbar__link--active' : ''}`}
               >
                 {link.label}
-                {link.future && <span className="navbar__badge-soon">Soon</span>}
               </Link>
             </li>
           ))}
           <li>
             <Link to="/contact" className="navbar__cta">
-              Contact Us
+              Hubungi Kami
             </Link>
           </li>
         </ul>
