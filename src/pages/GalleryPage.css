@@ -59,20 +59,17 @@
   cursor: pointer;
 }
 
-.gp-gallery__item:nth-child(1),
-.gp-gallery__item:nth-child(5) {
-  grid-column: span 2;
-  height: 360px;
-}
 
-.gp-gallery__item-img {
+.gp-gallery__item-img,
+.gp-gallery__item-video {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.gp-gallery__item:hover .gp-gallery__item-img {
+.gp-gallery__item:hover .gp-gallery__item-img,
+.gp-gallery__item:hover .gp-gallery__item-video {
   transform: scale(1.08);
 }
 
@@ -156,12 +153,11 @@
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background: rgba(0, 0, 0, 0.92);
+  background: rgba(0, 0, 0, 0.85);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 40px;
-  animation: lbFadeIn 0.3s ease;
 }
 
 @keyframes lbFadeIn {
@@ -171,27 +167,74 @@
 
 .gp-lightbox__content {
   position: relative;
-  max-width: 900px;
-  width: 100%;
+  max-width: 1200px;
+  width: 95%;
   border-radius: var(--radius-lg);
-  overflow: hidden;
+  overflow: hidden; /* Dikembalikan menjadi hidden karena pan pakai CSS transform */
   animation: lbScaleIn 0.3s ease;
+  display: flex; /* Untuk memusatkan konten di dalam kotak scroller */
+  align-items: center;
+  justify-content: center;
 }
 
-@keyframes lbScaleIn {
-  from { transform: scale(0.92); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
-
-.gp-lightbox__content img {
-  width: 100%;
-  display: block;
-}
-
-.gp-lightbox__close {
+.gp-lightbox__top-controls {
   position: absolute;
   top: 16px;
   right: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 2;
+}
+
+.gp-lightbox__zoom-group {
+  display: flex;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.gp-lightbox__zoom-btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: var(--white);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.gp-lightbox__zoom-btn:hover,
+.gp-lightbox__close:hover,
+.gp-lightbox__res-select:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.gp-lightbox__res-select {
+  appearance: none;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 20px;
+  color: var(--white);
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  transition: var(--transition-fast);
+}
+
+.gp-lightbox__res-select option {
+  background: #222;
+  color: #fff;
+}
+
+.gp-lightbox__close {
   width: 40px;
   height: 40px;
   display: flex;
@@ -201,30 +244,58 @@
   border: none;
   border-radius: 50%;
   color: var(--white);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+@keyframes lbScaleIn {
+  from { transform: scale(0.92); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.gp-lightbox__content img,
+.gp-lightbox__content video {
+  width: 100%;
+  height: 85vh; /* Diperbesar dari 65vh agar memenuhi mayoritas tinggi layar */
+  max-height: 950px; /* Batas maksimal diperbesar */
+  object-fit: contain; /* Tetap menjaga aspek rasio agar layar tidak terpotong */
+  display: block;
+}
+
+
+
+.gp-lightbox__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.3);
+  border: none;
+  border-radius: 50%;
+  color: var(--white);
+  font-size: 1.5rem;
   cursor: pointer;
   transition: var(--transition-fast);
   z-index: 1;
 }
 
-.gp-lightbox__close:hover {
+.gp-lightbox__nav:hover {
   background: rgba(255, 255, 255, 0.2);
 }
 
-.gp-lightbox__info {
-  padding: 20px 24px;
-  background: var(--dark);
+.gp-lightbox__nav--prev {
+  left: 16px;
 }
 
-.gp-lightbox__info h3 {
-  font-size: 1.1rem;
-  color: var(--white);
-  margin-bottom: 4px;
+.gp-lightbox__nav--next {
+  right: 16px;
 }
 
-.gp-lightbox__info p {
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.5);
-}
 
 /* Responsive */
 @media (max-width: 900px) {
@@ -232,10 +303,7 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .gp-gallery__item:nth-child(1),
-  .gp-gallery__item:nth-child(5) {
-    grid-column: span 2;
-  }
+
 }
 
 @media (max-width: 600px) {
@@ -243,11 +311,6 @@
     grid-template-columns: 1fr;
   }
 
-  .gp-gallery__item:nth-child(1),
-  .gp-gallery__item:nth-child(5) {
-    grid-column: span 1;
-    height: 260px;
-  }
 
   .gp-gallery__item {
     height: 240px;
@@ -257,3 +320,4 @@
     flex-wrap: wrap;
   }
 }
+
