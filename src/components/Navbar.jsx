@@ -63,6 +63,11 @@ function Navbar() {
               Hubungi Kami
             </Link>
           </li>
+          <li>
+            <Link to="/login" className="navbar__login">
+              Masuk
+            </Link>
+          </li>
         </ul>
 
         <button

@@ -170,6 +170,33 @@
   box-shadow: 0 4px 20px rgba(105, 167, 200, 0.4);
 }
 
+.navbar__login {
+  padding: 10px 24px;
+  background: transparent;
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  font-size: 0.88rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  transition: var(--transition-fast);
+  margin-left: 8px;
+}
+
+.navbar--scrolled .navbar__login {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.navbar__login:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--white);
+}
+
+.navbar--scrolled .navbar__login:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+
 /* Hamburger */
 .navbar__hamburger {
   display: none;
@@ -237,9 +264,10 @@
     font-size: 1rem;
   }
 
-  .navbar__cta {
+  .navbar__cta,
+  .navbar__login {
     margin-left: 0;
-    margin-top: 16px;
+    margin-top: 10px;
     text-align: center;
     width: 100%;
     display: block;
