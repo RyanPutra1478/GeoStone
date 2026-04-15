@@ -195,6 +195,87 @@
   transform: translateX(3px);
 }
 
+/* Radio Group - Delivery Method */
+.contact-form__radio-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.contact-form__radio {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: var(--gray-100);
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-weight: 500;
+}
+
+.contact-form__radio input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.contact-form__radio:hover {
+  border-color: var(--primary-light);
+  background: var(--white);
+}
+
+.contact-form__radio--active {
+  border-color: var(--primary);
+  background: var(--primary-ultra-light);
+  box-shadow: 0 0 0 3px rgba(105, 167, 200, 0.12);
+}
+
+.contact-form__radio-icon {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+  border-radius: var(--radius-sm);
+  color: var(--gray-500);
+  transition: all var(--transition-fast);
+  border: 1px solid var(--gray-200);
+}
+
+.contact-form__radio--active .contact-form__radio-icon {
+  background: var(--primary);
+  color: var(--white);
+  border-color: var(--primary);
+}
+
+.contact-form__radio-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.contact-form__radio-text strong {
+  font-size: 0.88rem;
+  color: var(--dark);
+  font-weight: 600;
+}
+
+.contact-form__radio-text small {
+  font-size: 0.72rem;
+  color: var(--gray-500);
+  font-weight: 400;
+}
+
+.contact-form__radio--active .contact-form__radio-text strong {
+  color: var(--primary-dark);
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   .contact-grid {
@@ -207,7 +288,8 @@
 }
 
 @media (max-width: 480px) {
-  .contact-form__row {
+  .contact-form__row,
+  .contact-form__radio-group {
     grid-template-columns: 1fr;
   }
 }

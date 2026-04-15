@@ -3,7 +3,7 @@ import './ContactPage.css'
 import './PageTransition.css'
 
 function ContactPage() {
-  const [formData, setFormData] = useState({ name: '', email: '', phone: '', subject: '', message: '' })
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '', subject: '', delivery: '', message: '' })
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -16,7 +16,7 @@ function ContactPage() {
   const handleSubmit = (e) => {
     e.preventDefault()
     alert('Terima kasih atas pesan Anda! Kami akan segera menghubungi Anda.')
-    setFormData({ name: '', email: '', phone: '', subject: '', message: '' })
+    setFormData({ name: '', email: '', phone: '', subject: '', delivery: '', message: '' })
   }
 
   return (
@@ -138,6 +138,35 @@ function ContactPage() {
                   <div className="contact-form__field">
                     <label htmlFor="subject">Subjek</label>
                     <input type="text" id="subject" name="subject" value={formData.subject} onChange={handleChange} placeholder="Pertanyaan proyek" required />
+                  </div>
+                </div>
+                <div className="contact-form__field">
+                  <label>Metode Pengambilan</label>
+                  <div className="contact-form__radio-group">
+                    <label className={`contact-form__radio ${formData.delivery === 'pickup' ? 'contact-form__radio--active' : ''}`}>
+                      <input type="radio" name="delivery" value="pickup" checked={formData.delivery === 'pickup'} onChange={handleChange} required />
+                      <span className="contact-form__radio-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+                        </svg>
+                      </span>
+                      <span className="contact-form__radio-text">
+                        <strong>Ambil Sendiri</strong>
+                        <small>Pengambilan langsung di lokasi</small>
+                      </span>
+                    </label>
+                    <label className={`contact-form__radio ${formData.delivery === 'delivery' ? 'contact-form__radio--active' : ''}`}>
+                      <input type="radio" name="delivery" value="delivery" checked={formData.delivery === 'delivery'} onChange={handleChange} required />
+                      <span className="contact-form__radio-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+                        </svg>
+                      </span>
+                      <span className="contact-form__radio-text">
+                        <strong>Antar</strong>
+                        <small>Dikirim ke lokasi tujuan</small>
+                      </span>
+                    </label>
                   </div>
                 </div>
                 <div className="contact-form__field">

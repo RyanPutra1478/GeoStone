@@ -18,6 +18,7 @@ function TradePage() {
   const [orderForm, setOrderForm] = useState({
     name: '',
     company: '',
+    deliveryMethod: '',
     location: '',
     kecamatan: '',
     desa: '',
@@ -27,7 +28,7 @@ function TradePage() {
 
   const handleOpenModal = (product) => {
     setSelectedProduct(product)
-    setOrderForm({ name: '', company: '', location: '', kecamatan: '', desa: '', quantity: product.step || 1 })
+    setOrderForm({ name: '', company: '', deliveryMethod: '', location: '', kecamatan: '', desa: '', quantity: product.step || 1 })
     setFormError('')
   }
 
@@ -51,8 +52,15 @@ function TradePage() {
     }
 
     // Format WhatsApp
-    const jenisDesaKelurahan = orderForm.location === 'Makassar' ? 'Kelurahan' : 'Desa'
-    const jenisKabKota = orderForm.location === 'Makassar' ? 'Kota' : 'Kabupaten'
+    const isDelivery = orderForm.deliveryMethod === 'antar'
+    let lokasiText = ''
+    if (isDelivery) {
+      const jenisDesaKelurahan = orderForm.location === 'Makassar' ? 'Kelurahan' : 'Desa'
+      const jenisKabKota = orderForm.location === 'Makassar' ? 'Kota' : 'Kabupaten'
+      lokasiText = `- Metode: Diantar\n- Lokasi Pengiriman: ${jenisDesaKelurahan} ${orderForm.desa}, Kec. ${orderForm.kecamatan}, ${jenisKabKota} ${orderForm.location}`
+    } else {
+      lokasiText = `- Metode: Ambil Sendiri`
+    }
     
     const text = `Halo,
 Saya tertarik dengan produk *${selectedProduct.title}* yang ada di website.
@@ -60,7 +68,7 @@ Saya tertarik dengan produk *${selectedProduct.title}* yang ada di website.
 *Detail Pemesanan:*
 - Nama Pemesan: ${orderForm.name}
 - Instansi/Perusahaan: ${orderForm.company}
-- Lokasi Pengiriman: ${jenisDesaKelurahan} ${orderForm.desa}, Kec. ${orderForm.kecamatan}, ${jenisKabKota} ${orderForm.location}
+${lokasiText}
 - Jumlah Pesanan: ${orderForm.quantity} ${selectedProduct.unit}
 
 Mohon informasi mengenai ketersediaan dan penawaran harga.`
@@ -239,44 +247,97 @@ Mohon informasi mengenai ketersediaan dan penawaran harga.`
                     <option value="Instansi / Perusahaan Mitra">Instansi / Perusahaan Mitra</option>
                   </select>
                 </div>
+
                 <div className="tp-form-group">
-                  <label>Lokasi Pengiriman</label>
-                  <select 
-                    required 
-                    value={orderForm.location}
-                    onChange={(e) => setOrderForm({...orderForm, location: e.target.value, kecamatan: '', desa: ''})}
-                  >
-                    <option value="" disabled>Pilih Kabupaten/Kota</option>
-                    <option value="Gowa">Gowa</option>
-                    <option value="Makassar">Makassar</option>
-                    <option value="Maros">Maros</option>
-                  </select>
+                  <label>Metode Pengambilan</label>
+                  <div className="tp-delivery-toggle">
+                    <label 
+                      className={`tp-delivery-option${orderForm.deliveryMethod === 'ambil' ? ' tp-delivery-option--active' : ''}`}
+                    >
+                      <input 
+                        type="radio" 
+                        name="deliveryMethod" 
+                        value="ambil" 
+                        checked={orderForm.deliveryMethod === 'ambil'}
+                        onChange={(e) => setOrderForm({...orderForm, deliveryMethod: e.target.value, location: '', kecamatan: '', desa: ''})}
+                        required
+                      />
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+                        <circle cx="12" cy="7" r="4"/>
+                      </svg>
+                      <div>
+                        <span className="tp-delivery-option__title">Ambil Sendiri</span>
+                        <span className="tp-delivery-option__desc">Ambil langsung di lokasi kami</span>
+                      </div>
+                    </label>
+                    <label 
+                      className={`tp-delivery-option${orderForm.deliveryMethod === 'antar' ? ' tp-delivery-option--active' : ''}`}
+                    >
+                      <input 
+                        type="radio" 
+                        name="deliveryMethod" 
+                        value="antar" 
+                        checked={orderForm.deliveryMethod === 'antar'}
+                        onChange={(e) => setOrderForm({...orderForm, deliveryMethod: e.target.value})}
+                        required
+                      />
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <rect x="1" y="3" width="15" height="13"/>
+                        <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+                        <circle cx="5.5" cy="18.5" r="2.5"/>
+                        <circle cx="18.5" cy="18.5" r="2.5"/>
+                      </svg>
+                      <div>
+                        <span className="tp-delivery-option__title">Diantar</span>
+                        <span className="tp-delivery-option__desc">Kami antar ke lokasi Anda</span>
+                      </div>
+                    </label>
+                  </div>
                 </div>
 
-                  <div className="tp-form-group">
-                    <label>Kecamatan</label>
-                    <select 
-                      required 
-                      value={orderForm.kecamatan}
-                      onChange={(e) => setOrderForm({...orderForm, kecamatan: e.target.value, desa: ''})}
-                    >
-                      <option value="" disabled>Pilih Kecamatan</option>
-                      {kecamatanData[orderForm.location]?.map(kec => (
-                        <option key={kec} value={kec}>{kec}</option>
-                      ))}
-                    </select>
-                  </div>
+                {orderForm.deliveryMethod === 'antar' && (
+                  <>
+                    <div className="tp-form-group tp-form-group--animated">
+                      <label>Lokasi Pengiriman</label>
+                      <select 
+                        required 
+                        value={orderForm.location}
+                        onChange={(e) => setOrderForm({...orderForm, location: e.target.value, kecamatan: '', desa: ''})}
+                      >
+                        <option value="" disabled>Pilih Kabupaten/Kota</option>
+                        <option value="Gowa">Gowa</option>
+                        <option value="Makassar">Makassar</option>
+                        <option value="Maros">Maros</option>
+                      </select>
+                    </div>
 
-                  <div className="tp-form-group">
-                    <label>Desa / Kelurahan</label>
-                    <input 
-                      type="text" 
-                      required 
-                      value={orderForm.desa}
-                      onChange={(e) => setOrderForm({...orderForm, desa: e.target.value})}
-                      placeholder="Masukkan nama Desa / Kelurahan"
-                    />
-                  </div>
+                    <div className="tp-form-group tp-form-group--animated">
+                      <label>Kecamatan</label>
+                      <select 
+                        required 
+                        value={orderForm.kecamatan}
+                        onChange={(e) => setOrderForm({...orderForm, kecamatan: e.target.value, desa: ''})}
+                      >
+                        <option value="" disabled>Pilih Kecamatan</option>
+                        {kecamatanData[orderForm.location]?.map(kec => (
+                          <option key={kec} value={kec}>{kec}</option>
+                        ))}
+                      </select>
+                    </div>
+
+                    <div className="tp-form-group tp-form-group--animated">
+                      <label>Desa / Kelurahan</label>
+                      <input 
+                        type="text" 
+                        required 
+                        value={orderForm.desa}
+                        onChange={(e) => setOrderForm({...orderForm, desa: e.target.value})}
+                        placeholder="Masukkan nama Desa / Kelurahan"
+                      />
+                    </div>
+                  </>
+                )}
                 <div className="tp-form-group">
                   <label>Jumlah Pesanan ({selectedProduct.unit})</label>
                   <input 
