@@ -49,7 +49,7 @@ function Navbar() {
           <img src="/logo_geostone .png" alt="GeoStone Logo" className="navbar__logo" />
           <div className="navbar__brand-text">
             <span className="navbar__brand-name">GeoStone</span>
-            <span className="navbar__brand-tagline">Pertambangan & Geologi</span>
+            <span className="navbar__brand-tagline">Mining & Geological Services</span>
           </div>
         </Link>
 

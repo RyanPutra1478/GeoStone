@@ -71,6 +71,30 @@
   color: var(--gray-500);
 }
 
+/* Clickable contact link */
+.contact-info__item--link {
+  text-decoration: none;
+  padding: 12px 16px;
+  margin: -12px -16px;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+  cursor: pointer;
+}
+
+.contact-info__item--link:hover {
+  background: var(--primary-ultra-light);
+  transform: translateX(4px);
+}
+
+.contact-info__item--link:hover .contact-info__icon {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.contact-info__item--link:hover span {
+  color: var(--primary) !important;
+}
+
 /* Social */
 .contact-info__social h4 {
   font-size: 0.9rem;

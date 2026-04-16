@@ -104,17 +104,17 @@ function Footer() {
             <div className="footer__contact">
               <h4 className="footer__links-title">Kontak Kami</h4>
               <div className="footer__contact-items">
-                <div className="footer__contact-item">
+                <a href="https://maps.app.goo.gl/xYAk9e9xE4z81SW16" target="_blank" rel="noopener noreferrer" className="footer__contact-item footer__contact-item--link">
                   <div className="footer__contact-icon">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
                     </svg>
                   </div>
                   <div>
-                    <span>Makassar, Indonesia</span>
-                    <span className="footer__contact-sub">Kantor Pusat</span>
+                    <span>Belabori, Kec. Parangloe, Kab. Gowa</span>
+                    <span className="footer__contact-sub">Lihat di Google Maps →</span>
                   </div>
-                </div>
+                </a>
                 <div className="footer__contact-item">
                   <div className="footer__contact-icon">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

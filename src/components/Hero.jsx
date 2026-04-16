@@ -83,13 +83,6 @@ function Hero() {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="hero__scroll-indicator">
-        <div className="hero__scroll-mouse">
-          <div className="hero__scroll-wheel"></div>
-        </div>
-        <span>Scroll ke Bawah</span>
-      </div>
     </section>
   )
 }

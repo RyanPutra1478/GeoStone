@@ -52,18 +52,18 @@ function ContactPage() {
               </p>
 
               <div className="contact-info__items">
-                <div className="contact-info__item">
+                <a href="https://maps.app.goo.gl/xYAk9e9xE4z81SW16" target="_blank" rel="noopener noreferrer" className="contact-info__item contact-info__item--link">
                   <div className="contact-info__icon">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
                     </svg>
                   </div>
                   <div>
-                    <h4>Alamat Kantor</h4>
-                    <p>Jakarta, Indonesia</p>
-                    <span>Kantor Pusat</span>
+                    <h4>PT. Geostone Khamilah Indonesia</h4>
+                    <p>Belabori, Kec. Parangloe, Kab. Gowa</p>
+                    <span>Lihat di Google Maps →</span>
                   </div>
-                </div>
+                </a>
 
                 <div className="contact-info__item">
                   <div className="contact-info__icon">

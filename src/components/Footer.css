@@ -266,6 +266,29 @@
   margin-top: 2px;
 }
 
+/* Clickable contact link */
+.footer__contact-item--link {
+  text-decoration: none;
+  padding: 10px 12px;
+  margin: -10px -12px;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-base);
+  cursor: pointer;
+}
+
+.footer__contact-item--link:hover {
+  background: rgba(105, 167, 200, 0.1);
+  transform: translateX(4px);
+}
+
+.footer__contact-item--link:hover .footer__contact-icon {
+  background: rgba(105, 167, 200, 0.25);
+}
+
+.footer__contact-item--link:hover .footer__contact-sub {
+  color: var(--primary-light) !important;
+}
+
 /* Bottom Bar */
 .footer__bottom {
   background: var(--dark);
