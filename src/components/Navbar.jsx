@@ -30,7 +30,7 @@ function Navbar() {
     { to: '/', label: 'Beranda' },
     { to: '/company', label: 'Perusahaan' },
     { to: '/services', label: 'Layanan' },
-    { to: '/trade', label: 'Perdagangan' },
+    { to: '/trade', label: 'Produk Kami' },
     { to: '/gallery', label: 'Galeri' },
   ]
 

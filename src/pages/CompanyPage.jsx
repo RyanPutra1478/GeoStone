@@ -81,25 +81,19 @@ function CompanyPage() {
                 <span className="cp-accent"> Pertambangan</span>
               </h2>
               <p>
-                Didirikan dengan visi untuk mentransformasi lanskap pertambangan Indonesia,
-                PT Geostone Khamilah Indonesia telah tumbuh dari penyedia layanan geologi kecil menjadi
-                perusahaan solusi pertambangan yang komprehensif. Tim ahli geologi,
-                insinyur, dan profesional pertambangan kami menghadirkan puluhan tahun
-                keahlian gabungan di setiap proyek.
-              </p>
-              <p>
-                Kami percaya pada penambangan yang bertanggung jawab yang menyeimbangkan pertumbuhan ekonomi
-                dengan pelestarian lingkungan, menciptakan nilai yang berkelanjutan bagi para
-                pemangku kepentingan dan masyarakat yang kami layani.
+                PT. GEOSTONE KHAMILAH INDONESIA adalah perusahaan swasta yang bergerak di bidang
+                pertambangan dan perdagangan Batuan Andesit dan Tanah Urug yang berlokasi di Desa Belabori
+                Kecamatan Parangloe Kabupaten Gowa Provinsi Sulawesi Selatan. Perusahaan ini telah berdiri sejak
+                tahun 2016 dengan wilayah konsesi seluas 70 Hektar yang berizin resmi.
               </p>
               <div className="cp-story__stats">
                 <div className="cp-story__stat">
-                  <span className="cp-story__stat-num">10+</span>
-                  <span className="cp-story__stat-label">Tahun Pengalaman</span>
+                  <span className="cp-story__stat-num">2016</span>
+                  <span className="cp-story__stat-label">Tahun Berdiri</span>
                 </div>
                 <div className="cp-story__stat">
-                  <span className="cp-story__stat-num">50+</span>
-                  <span className="cp-story__stat-label">Proyek Selesai</span>
+                  <span className="cp-story__stat-num">70</span>
+                  <span className="cp-story__stat-label">Luas Konsesi</span>
                 </div>
                 <div className="cp-story__stat">
                   <span className="cp-story__stat-num">100+</span>
@@ -131,9 +125,7 @@ function CompanyPage() {
               </div>
               <h3>Visi Kami</h3>
               <p>
-                Menjadi perusahaan pertambangan yang paling terpercaya dan inovatif di
-                Asia Tenggara, menetapkan standar untuk ekstraksi sumber daya yang
-                bertanggung jawab dan pembangunan berkelanjutan.
+                Menjadi Perusahaan Tambang Batuan Andesit dan Tanah Urug Terbaik dan Terbesar
               </p>
             </div>
             <div className="cp-vm__card cp-vm__card--mission reveal reveal--right">
@@ -143,11 +135,13 @@ function CompanyPage() {
                 </svg>
               </div>
               <h3>Misi Kami</h3>
-              <p>
-                Memberikan solusi pertambangan yang inovatif dan berkelanjutan untuk membuka
-                potensi bumi sambil menjaga lingkungan kita untuk generasi mendatang,
-                memberdayakan masyarakat, dan menciptakan nilai pemangku kepentingan yang abadi.
-              </p>
+              <ul className="cp-vm__list">
+                <li>Mengutamakan keselamatan dan kelestarian lingkungan</li>
+                <li>Menjadi contoh bagi perusahan sejenis yang lain dalam menerapkan kaidah pertambangan yang baik</li>
+                <li>Memelihara hubungan baik antara stake holder dan lingkungan secara menyeluruh</li>
+                <li>Mendukung pembangunan dan pengembangan masyarakat di sekitar wilayah tambang</li>
+                <li>Memaksimalkan produksi dan potensi bahan galian yang berada dalam wilyah konsesi.</li>
+              </ul>
             </div>
           </div>
         </div>

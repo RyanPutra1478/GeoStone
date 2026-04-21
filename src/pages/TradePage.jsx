@@ -126,7 +126,6 @@ Mohon informasi mengenai ketersediaan dan penawaran harga.`
           <div className="page-hero__overlay"></div>
         </div>
         <div className="page-hero__content container">
-          <span className="page-hero__badge reveal delay-100">Perdagangan Mineral</span>
           <h1 className="page-hero__title reveal delay-200">Trade Service</h1>
           <p className="page-hero__desc reveal delay-300">
             Layanan suplai material tambang berkualitas tinggi dari sumber tepercaya. Kami memfasilitasi transaksi hasil bumi yang efisien untuk kebutuhan industri lokal maupun perniagaan global.
