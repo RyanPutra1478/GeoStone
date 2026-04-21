@@ -73,7 +73,7 @@ function Company() {
           </div>
           <div className="company__header-right">
             <p className="section-subtitle">
-              GeoStone is a leading mining and geological services company
+              PT Geostone Khamilah Indonesia is a leading mining and geological services company
               committed to delivering world-class solutions in mineral
               exploration, extraction, and resource management across Indonesia.
             </p>
@@ -94,7 +94,7 @@ function Company() {
               <h3>Our Story</h3>
               <p>
                 Founded with a vision to transform Indonesia's mining landscape,
-                GeoStone has grown from a small geological services provider into
+                PT Geostone Khamilah Indonesia has grown from a small geological services provider into
                 a comprehensive mining solutions company. Our team of experienced
                 geologists, engineers, and mining professionals bring decades of
                 combined expertise to every project.

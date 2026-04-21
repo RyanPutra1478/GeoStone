@@ -47,7 +47,7 @@ function Hero() {
             Alam Bumi
           </h1>
           <p className="hero__description reveal delay-300">
-            GeoStone memberikan keunggulan dalam eksplorasi tambang, ekstraksi, dan
+            PT Geostone Khamilah Indonesia memberikan keunggulan dalam eksplorasi tambang, ekstraksi, dan
             layanan geologi. Kami memadukan teknologi mutakhir dengan
             praktik berkelanjutan untuk membuka potensi di bawah permukaan bumi.
           </p>

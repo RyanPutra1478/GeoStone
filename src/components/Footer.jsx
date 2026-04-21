@@ -147,7 +147,7 @@ function Footer() {
       <div className="footer__bottom">
         <div className="container">
           <div className="footer__bottom-content">
-            <p>&copy; {new Date().getFullYear()} GeoStone. Hak Cipta Dilindungi.</p>
+            <p>&copy; {new Date().getFullYear()} PT Geostone Khamilah Indonesia. Hak Cipta Dilindungi.</p>
             <div className="footer__bottom-links">
               <a href="#">Kebijakan Privasi</a>
               <a href="#">Syarat & Ketentuan</a>

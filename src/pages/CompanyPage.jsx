@@ -46,11 +46,9 @@ function CompanyPage() {
   ]
 
   const milestones = [
-    { year: '2015', title: 'Perusahaan Didirikan', desc: 'GeoStone didirikan di Jakarta dengan visi untuk mentransformasi lanskap pertambangan Indonesia.' },
+    { year: '2015', title: 'Perusahaan Didirikan', desc: 'PT Geostone Khamilah Indonesia didirikan di Jakarta dengan visi untuk mentransformasi lanskap pertambangan Indonesia.' },
     { year: '2017', title: 'Proyek Besar Pertama', desc: 'Mengamankan proyek pertambangan nikel skala besar pertama di Sulawesi Tenggara.' },
     { year: '2019', title: 'Ekspansi Armada', desc: 'Memperluas kapasitas armada hingga lebih dari 50 unit alat berat di berbagai lokasi proyek.' },
-    { year: '2021', title: 'Sertifikasi Lingkungan', desc: 'Berhasil meraih sertifikasi Sistem Manajemen Lingkungan ISO 14001.' },
-    { year: '2023', title: 'Ekspansi Regional', desc: 'Memperluas operasional ke 5 provinsi di Sulawesi, Kalimantan, dan Maluku.' },
     { year: '2025', title: 'Transformasi Digital', desc: 'Meluncurkan platform manajemen pertambangan digital terintegrasi untuk seluruh operasi.' },
   ]
 
@@ -84,7 +82,7 @@ function CompanyPage() {
               </h2>
               <p>
                 Didirikan dengan visi untuk mentransformasi lanskap pertambangan Indonesia,
-                GeoStone telah tumbuh dari penyedia layanan geologi kecil menjadi
+                PT Geostone Khamilah Indonesia telah tumbuh dari penyedia layanan geologi kecil menjadi
                 perusahaan solusi pertambangan yang komprehensif. Tim ahli geologi,
                 insinyur, dan profesional pertambangan kami menghadirkan puluhan tahun
                 keahlian gabungan di setiap proyek.

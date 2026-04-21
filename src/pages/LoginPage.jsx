@@ -60,7 +60,7 @@ function LoginPage() {
 
           <div className="login-header">
             <h2>Selamat Datang</h2>
-            <p>Silakan masuk untuk mengakses portal GeoStone.</p>
+            <p>Silakan masuk untuk mengakses portal PT Geostone Khamilah Indonesia.</p>
           </div>
 
           {/* Error Message */}

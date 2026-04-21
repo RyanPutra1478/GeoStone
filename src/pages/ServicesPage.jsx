@@ -11,18 +11,6 @@ function ServicesPage() {
     {
       icon: (
         <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
-          <line x1="11" y1="8" x2="11" y2="14" /><line x1="8" y1="11" x2="14" y2="11" />
-        </svg>
-      ),
-      title: 'Eksplorasi Geologi',
-      desc: 'Survei geologi komprehensif, pemetaan, dan pengeboran inti untuk mengidentifikasi dan mengevaluasi endapan mineral dengan presisi dan akurasi tinggi.',
-      features: ['Pemetaan & Survei Geologi', 'Pengeboran Core & RC', 'Estimasi & Pemodelan Sumber Daya', 'Analisis Geokimia'],
-      image: '/service-mining.png',
-    },
-    {
-      icon: (
-        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <rect x="2" y="6" width="20" height="12" rx="2" /><path d="M12 12h.01" /><path d="M17 12h.01" />
           <path d="M7 12h.01" /><path d="M2 10h20" /><path d="M2 14h20" />
         </svg>
@@ -31,17 +19,6 @@ function ServicesPage() {
       desc: 'Operasi penambangan skala penuh termasuk penambangan terbuka, pengupasan tanah pucuk, dan ekstraksi bijih menggunakan alat berat mutakhir.',
       features: ['Penambangan Terbuka', 'Pengupasan Overburden', 'Ekstraksi Bijih & Peledakan', 'Manajemen Lokasi Tambang'],
       image: '/hero-mining.png',
-    },
-    {
-      icon: (
-        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" /><polyline points="14 2 14 8 20 8" /><line x1="16" y1="13" x2="8" y2="13" /><line x1="16" y1="17" x2="8" y2="17" />
-        </svg>
-      ),
-      title: 'Perencanaan & Desain Tambang',
-      desc: 'Layanan perencanaan tambang strategis dan desain teknik untuk mengoptimalkan sumber daya, meminimalkan limbah, dan memaksimalkan efisiensi operasional.',
-      features: ['Desain Optimasi Pit', 'Penjadwalan Produksi', 'Studi Kelayakan', 'Analisis Biaya & Penganggaran'],
-      image: '/service-mining.png',
     },
     {
       icon: (
@@ -64,17 +41,6 @@ function ServicesPage() {
       desc: 'Manajemen armada yang andal dan layanan transportasi mineral untuk memastikan pengiriman yang aman dan efisien dari lokasi tambang ke fasilitas pengolahan.',
       features: ['Manajemen Armada & Dispatch', 'Konstruksi Jalan Angkut', 'Logistik & Perencanaan Rute', 'Pemeliharaan Peralatan'],
       image: '/hauling-mining.png',
-    },
-    {
-      icon: (
-        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M22 11.08V12a10 10 0 11-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" />
-        </svg>
-      ),
-      title: 'Konsultasi & Kepatuhan',
-      desc: 'Layanan penasihat ahli yang mencakup kepatuhan regulasi, perizinan, audit keselamatan tambang, dan konsultasi teknis untuk operasi pertambangan.',
-      features: ['Kepatuhan Peraturan (Regulasi)', 'Audit & Pelatihan Keselamatan', 'Akuisisi Izin (Permitting)', 'Penasihat Teknis'],
-      image: '/hero-mining.png',
     },
   ]
 
