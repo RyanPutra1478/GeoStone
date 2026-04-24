@@ -53,7 +53,6 @@ function ServicesPage() {
           <div className="page-hero__overlay"></div>
         </div>
         <div className="page-hero__content container">
-          <span className="page-hero__badge reveal delay-100">Layanan Kami</span>
           <h1 className="page-hero__title reveal delay-200">Layanan Kami</h1>
           <p className="page-hero__desc reveal delay-300">
             Dari eksplorasi awal hingga rehabilitasi lingkungan, kami menyediakan

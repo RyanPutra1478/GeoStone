@@ -61,7 +61,6 @@ function CompanyPage() {
           <div className="page-hero__overlay"></div>
         </div>
         <div className="page-hero__content container">
-          <span className="page-hero__badge reveal delay-100">Tentang Kami</span>
           <h1 className="page-hero__title reveal delay-200">Perusahaan Kami</h1>
           <p className="page-hero__desc reveal delay-300">
             Mempelopori keunggulan pertambangan sejak 2015, menghadirkan solusi

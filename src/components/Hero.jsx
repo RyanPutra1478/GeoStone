@@ -35,10 +35,6 @@ function Hero() {
 
       <div className="hero__content container">
         <div className="hero__text">
-          <div className="hero__badge reveal delay-100">
-            <span className="hero__badge-dot"></span>
-            Mitra Pertambangan Terpercaya Sejak 2015
-          </div>
           <h1 className="hero__title reveal delay-200">
             Membangun Masa Depan
             <br />
